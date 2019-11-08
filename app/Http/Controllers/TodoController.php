@@ -63,7 +63,7 @@ class TodoController extends Controller
         $this->todo->fill($input)->save();
         // $this->todo->title = $request->title;
         // fill()を使うと、モデルの$fillableで指定したカラムと同じ名前のリクエストデータの属性の値を$inputから取得して、インスタンスに代入してくれる
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
         // リダイレクト処理、toの引数でパス（’todo’）を指定。
     }
 
@@ -105,7 +105,7 @@ class TodoController extends Controller
         // $todo = $this->todo->find($id);
         // $todo->fill($input)->save();
 
-        return redirect()->to('todo'); // redirect()は別のリクエストへGETリクエストを出し、そのリクエストによってviewを表示させている。
+        return redirect()->route('todo.index'); // redirect()は別のリクエストへGETリクエストを出し、そのリクエストによってviewを表示させている。
     }
 
     /**->id
@@ -117,6 +117,6 @@ class TodoController extends Controller
     public function destroy($id)
     {
         $this->todo->find($id)->delete();
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 }
