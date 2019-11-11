@@ -3,7 +3,7 @@
 @section ('content')
 {{-- @sectionで＠extendsで継承したapp.blade.php内の@yield('content')部分に、@endsectionまでの記述を表示させる --}}
 
-<h1 class="page-header">ToDo一覧</h1>
+<h1 class="page-header">{{ $user->name }}のToDo一覧</h1>
 <p class="text-right">
   <a class="btn btn-success" href="/todo/create">新規作成</a>
 </p>

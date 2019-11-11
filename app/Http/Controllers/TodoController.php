@@ -31,7 +31,8 @@ class TodoController extends Controller
     public function index()
     {
         $todos = $this->todo->getByUserId(Auth::id());
-        return view('todo.index', compact('todos'));
+        $user = Auth::user();
+        return view('todo.index', compact('todos', 'user'));
         // return view('todo.index', ['todos'=>$todos]);
         // viewメソッドの第一引数で表示させたいviewを指定、第二引数でviewに値を受け渡す処理
         // compact()は変数名とその値から連想配列を作成する
