@@ -10,6 +10,7 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
+      <th>ID</th>
       <th>やること</th>
       <th>作成日時</th>
       <th>更新日時</th>
@@ -21,6 +22,7 @@
     @foreach ($todos as $todo) <?php // foreachで$todosに入っているtodoオブジェクトをから1つずつ$todoに代入してループさせる?>
      <?php //dd($todos); ?> 
       <tr>
+        <td class="align-middle">{{ $todo->id }}</td>
         <td class="align-middle">{{ $todo->title }}</td>  <?php // $todo->プロパティ（カラム名）とすることでその値を取得して表示している。?>
         <td class="align-middle">{{ $todo->created_at }}</td>
         <td class="align-middle">{{ $todo->updated_at }}</td>
