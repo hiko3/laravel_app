@@ -23,6 +23,6 @@ class Todo extends Model
 
     public function getByUserId($id) //User_idカラムのIDを取得している関数
     {
-        return $this->where('user_id', $id)->get();
+       return $this->where('user_id', $id)->orderBy('created_at', 'desc')->simplePaginate(10);
     }
 }

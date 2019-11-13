@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Todo;
 use Auth;
+
 // 使うクラスを宣言する。エイリアス（別名）でパスの記述を短くできる。
 
 class TodoController extends Controller
@@ -76,7 +77,9 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        //
+        $todo = $this->todo->find($id);
+        $user = Auth::user();
+        return view('todo.show', compact('todo', 'user'));
     }
 
     /**

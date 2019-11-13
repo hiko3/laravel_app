@@ -38,7 +38,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest'); //ミドルウェアが何をしているか HTTPリクエストをフィルタリングして、ユーザーが誰かを判断している。
-        // ログインしているユーザーauthがログインしようとしたらログインコントローラのミドルウェアはguestに指定しているので、ログインコントローラは実行されない
+        // ログインしているユーザーauthがログインページを表示しようとしたらログインコントローラのミドルウェアはguestに指定しているので、コントローラのメソッドは実行されず、/homeにリダイレクトされる
     }
 
     /**
